@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kanji Automotive | Honest Auto Repair in Scarborough</title>
+<meta name="description" content="Kanji Automotive – trusted mechanic at 3436 Sheppard Ave E, Scarborough. Oil changes, brakes, tires, diagnostics and full vehicle inspections. Open 7 days. Call (416) 751-5250.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f17;--bg2:#111827;--panel:#151d2c;--line:#243047;
+  --ink:#eef2f8;--muted:#9aa6bb;--yellow:#ffc21a;--blue:#2f6bff;--red:#ff3b3b;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+h1,h2,h3,.cond{font-family:"Barlow Condensed",Inter,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.02}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:12px;font-weight:700;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-y{background:var(--yellow);color:#111;box-shadow:0 10px 30px -10px rgba(255,194,26,.7)}
+.btn-o{border:1.5px solid var(--line);background:rgba(255,255,255,.03)}
+.btn-o:hover{border-color:var(--yellow)}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow)}
+.tag::before{content:"";width:28px;height:2px;background:var(--yellow)}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(11,15,23,.85);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Barlow Condensed",Inter,sans-serif;font-weight:800;font-size:26px;letter-spacing:.04em}
+.logo svg{width:34px;height:34px}
+.logo b{color:var(--yellow)}
+.links{display:flex;gap:28px;font-weight:500;color:var(--muted)}
+.links a:hover{color:var(--ink)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.status i{width:8px;height:8px;border-radius:50%;background:#888}
+.status.open i{background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse 1.8s infinite}
+.status.closed i{background:var(--red)}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.burger{display:none;background:none;border:0;color:var(--ink);font-size:28px;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:110px 0 60px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:center/cover no-repeat;opacity:.28;transform:scale(1.08);filter:saturate(.8)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(1200px 600px at 80% 10%,rgba(47,107,255,.25),transparent 60%),linear-gradient(180deg,rgba(11,15,23,.4),var(--bg) 92%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(48px,8vw,104px);font-weight:800;margin:18px 0}
+.hero h1 span{color:var(--yellow);display:block}
+.hero p.lead{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:560px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.stars{color:var(--yellow);letter-spacing:2px}
+.proof{display:flex;align-items:center;gap:14px;margin-top:28px;color:var(--muted);font-size:15px}
+.proof strong{color:var(--ink);font-size:22px;font-family:"Barlow Condensed",Inter,sans-serif}
+
+/* Gear animation */
+.gearbox{position:relative;aspect-ratio:1;max-width:460px;margin-left:auto;width:100%}
+.gear{position:absolute;color:var(--yellow)}
+.g1{width:62%;top:6%;left:4%;animation:spin 14s linear infinite}
+.g2{width:42%;bottom:6%;right:4%;color:var(--blue);animation:spin 9.4s linear infinite reverse}
+.g3{width:26%;top:4%;right:10%;color:#3b4a66;animation:spin 6s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.offer-badge{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%) rotate(-6deg);background:var(--red);color:#fff;border-radius:18px;padding:16px 22px;text-align:center;box-shadow:0 20px 50px -10px rgba(255,59,59,.6);animation:bob 3s ease-in-out infinite}
+.offer-badge b{display:block;font:800 52px/1 "Barlow Condensed",Inter,sans-serif}
+.offer-badge small{font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+@keyframes bob{50%{transform:translate(-50%,-56%) rotate(-3deg)}}
+
+/* ticker */
+.ticker{background:var(--yellow);color:#111;overflow:hidden;white-space:nowrap;border-block:1px solid #e0a800}
+.ticker div{display:inline-block;padding:14px 0;font:700 20px "Barlow Condensed",Inter,sans-serif;text-transform:uppercase;letter-spacing:.06em;animation:tick 30s linear infinite}
+.ticker span{margin:0 26px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+section{padding:100px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:48px}
+.sec-head h2{font-size:clamp(38px,5vw,64px);font-weight:800;margin-top:10px}
+.sec-head p{color:var(--muted);max-width:440px}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;overflow:hidden;transition:transform .3s,border-color .3s}
+.svc::after{content:"";position:absolute;inset:auto -40% -60% auto;width:220px;height:220px;background:radial-gradient(circle,rgba(255,194,26,.18),transparent 70%);opacity:0;transition:opacity .3s}
+.svc:hover{transform:translateY(-6px);border-color:#3a4a6b}
+.svc:hover::after{opacity:1}
+.svc .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:rgba(255,194,26,.1);color:var(--yellow);margin-bottom:18px}
+.svc .ic svg{width:28px;height:28px}
+.svc h3{font-size:28px;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:15px}
+
+/* promo */
+.promo{background:linear-gradient(120deg,#1a2540,#0f1626);border:1px solid var(--line);border-radius:28px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.promo-img{background:center/cover;min-height:380px}
+.promo-txt{padding:48px}
+.promo-txt .price{font:800 clamp(80px,10vw,130px)/.9 "Barlow Condensed",Inter,sans-serif;color:var(--yellow);margin:16px 0 6px}
+.promo-txt h3{font-size:36px;margin-bottom:14px}
+.checks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin:22px 0 30px;color:var(--muted)}
+.checks li{display:flex;gap:10px;align-items:center}
+.checks li::before{content:"✓";color:#111;background:var(--yellow);width:20px;height:20px;border-radius:6px;display:grid;place-items:center;font-size:12px;font-weight:800;flex:none}
+
+/* why */
+.why{background:var(--bg2);border-block:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{padding:30px;border-radius:var(--radius);background:var(--panel);border:1px solid var(--line)}
+.stat b{display:block;font:800 60px/1 "Barlow Condensed",Inter,sans-serif;color:var(--yellow)}
+.stat span{color:var(--muted)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.pillar{padding:26px;border-radius:var(--radius);border:1px dashed #33425f}
+.pillar h3{font-size:26px;margin-bottom:6px}
+.pillar p{color:var(--muted);font-size:15px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px}
+.gallery button{border:0;padding:0;cursor:zoom-in;border-radius:14px;overflow:hidden;background:var(--panel);position:relative}
+.gallery button img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gallery button:hover img{transform:scale(1.07)}
+.gallery .w2{grid-column:span 2}.gallery .h2{grid-row:span 2}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;display:none;place-items:center;padding:20px}
+.lb.on{display:grid}
+.lb img{max-height:86vh;border-radius:12px}
+.lb button{position:absolute;top:18px;right:22px;background:none;border:0;color:#fff;font-size:40px;cursor:pointer}
+
+/* reviews */
+.rev-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin}
+.rev{flex:0 0 min(400px,86%);scroll-snap-align:start;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:16px}
+.rev p{color:#d5dbe6}
+.rev .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:700;background:linear-gradient(135deg,var(--blue),#6a8dff);color:#fff}
+.rev-nav{display:flex;gap:10px}
+.rev-nav button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:20px;cursor:pointer}
+.rev-nav button:hover{border-color:var(--yellow);color:var(--yellow)}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1.2fr;gap:24px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+.hours{width:100%;border-collapse:collapse;margin-top:12px}
+.hours td{padding:11px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{color:var(--yellow);font-weight:700}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:420px}
+.map iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.3) invert(.9) hue-rotate(180deg)}
+.contact-line{display:flex;gap:14px;align-items:flex-start;margin:16px 0}
+.contact-line svg{width:22px;height:22px;color:var(--yellow);flex:none;margin-top:3px}
+
+footer{padding:40px 0 110px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.callbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;gap:10px}
+.callbar a{flex:1;justify-content:center}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+@media (max-width:960px){
+  .links{display:none}
+  .links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--bg2);padding:20px 24px;border-bottom:1px solid var(--line);gap:16px}
+  .burger{display:block}
+  .nav-cta .btn{display:none}
+  .hero .wrap{grid-template-columns:1fr}
+  .gearbox{max-width:300px;margin:10px auto 0}
+  .svc-grid,.pillars{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .promo{grid-template-columns:1fr}
+  .promo-img{min-height:240px}
+  .visit{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
+  .callbar{display:flex}
+}
+@media (max-width:600px){
+  section{padding:70px 0}
+  .svc-grid,.pillars{grid-template-columns:1fr}
+  .promo-txt{padding:30px 22px}
+  .checks{grid-template-columns:1fr}
+  .stat b{font-size:46px}
+  .status{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo" aria-label="Kanji Automotive home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#ffc21a" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
+      KANJI <b>AUTO</b>
+    </a>
+    <div class="links" id="links">
+      <a href="#services">Services</a><a href="#special">Special</a><a href="#why">Why Us</a><a href="#gallery">Shop</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a>
+    </div>
+    <div class="nav-cta">
+      <span class="status" id="status"><i></i><span>Checking hours…</span></span>
+      <a class="btn btn-y" href="tel:+14167515250">Call Now</a>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg" data-img="hero"></div>
+  <div class="wrap">
+    <div class="rv">
+      <span class="tag">Scarborough's trusted mechanic</span>
+      <h1>Honest repairs. <span>No upselling.</span></h1>
+      <p class="lead">From oil changes and brakes to flat tires and full diagnostics, Kanji Automotive keeps you on the road with fair quotes and clear explanations. Walk-ins welcome, 7 days a week.</p>
+      <div class="ctas">
+        <a class="btn btn-y" href="tel:+14167515250">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          (416) 751-5250</a>
+        <a class="btn btn-o" href="https://www.google.com/maps/dir/?api=1&destination=Kanji+Automotive+3436+Sheppard+Ave+E+Scarborough+ON" target="_blank" rel="noopener">Get Directions →</a>
+      </div>
+      <div class="proof">
+        <strong>4.6</strong><span class="stars">★★★★★</span><span>from <b id="revcount">639</b> Google reviews</span>
+      </div>
+    </div>
+    <div class="gearbox rv" aria-hidden="true">
+      <svg class="gear g1" viewBox="0 0 100 100"><path fill="currentColor" d="M43 2h14l2 12a37 37 0 0 1 9 4l10-7 10 10-7 10a37 37 0 0 1 4 9l12 2v14l-12 2a37 37 0 0 1-4 9l7 10-10 10-10-7a37 37 0 0 1-9 4l-2 12H43l-2-12a37 37 0 0 1-9-4l-10 7-10-10 7-10a37 37 0 0 1-4-9L3 57V43l12-2a37 37 0 0 1 4-9l-7-10 10-10 10 7a37 37 0 0 1 9-4zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg>
+      <svg class="gear g2" viewBox="0 0 100 100"><path fill="currentColor" d="M43 2h14l2 12a37 37 0 0 1 9 4l10-7 10 10-7 10a37 37 0 0 1 4 9l12 2v14l-12 2a37 37 0 0 1-4 9l7 10-10 10-10-7a37 37 0 0 1-9 4l-2 12H43l-2-12a37 37 0 0 1-9-4l-10 7-10-10 7-10a37 37 0 0 1-4-9L3 57V43l12-2a37 37 0 0 1 4-9l-7-10 10-10 10 7a37 37 0 0 1 9-4zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg>
+      <svg class="gear g3" viewBox="0 0 100 100"><path fill="currentColor" d="M43 2h14l2 12a37 37 0 0 1 9 4l10-7 10 10-7 10a37 37 0 0 1 4 9l12 2v14l-12 2a37 37 0 0 1-4 9l7 10-10 10-10-7a37 37 0 0 1-9 4l-2 12H43l-2-12a37 37 0 0 1-9-4l-10 7-10-10 7-10a37 37 0 0 1-4-9L3 57V43l12-2a37 37 0 0 1 4-9l-7-10 10-10 10 7a37 37 0 0 1 9-4zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg>
+      <div class="offer-badge"><small>Oil &amp; filter change</small><b>$89</b><small>+ full inspection</small></div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div>
+  <span>★ Walk-ins welcome</span><span>★ Open 7 days a week</span><span>★ Brakes · Tires · Suspension</span><span>★ Flat tire repair</span><span>★ Winter tire changeovers</span><span>★ Fair pricing</span><span>★ No upselling</span>
+  <span>★ Walk-ins welcome</span><span>★ Open 7 days a week</span><span>★ Brakes · Tires · Suspension</span><span>★ Flat tire repair</span><span>★ Winter tire changeovers</span><span>★ Fair pricing</span><span>★ No upselling</span>
+</div></div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="tag">What we do</span><h2>Full-service<br>auto care</h2></div>
+      <p>Bring it in for routine maintenance or a warning light. We diagnose fast, explain everything in plain language and only fix what actually needs fixing.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg></div><h3>Oil &amp; Filter</h3><p>Full synthetic oil and genuine filters, with a complete vehicle check every time.</p></div>
+      <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg></div><h3>Brakes &amp; Rotors</h3><p>Pads, rotors, calipers and brake fluid, so you stop safely every time.</p></div>
+      <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/></svg></div><h3>Tires &amp; Flats</h3><p>Flat tire repair, seasonal changeovers, mounting, balancing and tire sourcing.</p></div>
+      <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h3>Diagnostics</h3><p>Check-engine and battery lights, electrical faults and drivability issues found fast.</p></div>
+      <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18h16M6 18V9l6-5 6 5v9"/><path d="M10 18v-5h4v5"/></svg></div><h3>Suspension</h3><p>Shocks, struts, ball joints and steering components for a smooth, safe ride.</p></div>
+      <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></div><h3>Major Repairs</h3><p>Engine work, part sourcing and accident repairs, coordinated with your insurer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="special" style="padding-top:0">
+  <div class="wrap">
+    <div class="promo rv">
+      <div class="promo-img" data-bg="flyer"></div>
+      <div class="promo-txt">
+        <span class="tag">Shop special</span>
+        <div class="price">$89</div>
+        <h3>Engine oil &amp; filter change</h3>
+        <p style="color:var(--muted)">Full synthetic oil and a genuine filter, plus a full vehicle inspection. Walk in, no appointment needed.</p>
+        <ul class="checks">
+          <li>Brakes</li><li>Tires</li><li>Suspension</li><li>Fluids</li><li>Lights</li><li>Belts &amp; hoses</li>
+        </ul>
+        <a class="btn btn-y" href="tel:+14167515250">Book by phone</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="tag">Why drivers trust us</span><h2>The mechanic<br>you can trust</h2></div>
+      <p>Reviewers keep coming back to the same words: honest, professional, fair. Here's what that looks like in numbers.</p>
+    </div>
+    <div class="stats">
+      <div class="stat rv"><b data-count="4.6" data-dec="1">0</b><span>Google rating</span></div>
+      <div class="stat rv"><b data-count="639">0</b><span>Google reviews</span></div>
+      <div class="stat rv"><b data-count="7">0</b><span>Days a week open</span></div>
+      <div class="stat rv"><b>$89</b><span>Oil change + inspection</span></div>
+    </div>
+    <div class="pillars">
+      <div class="pillar rv"><h3>No upselling</h3><p>We recommend only what your car actually needs, and tell you when it needs nothing.</p></div>
+      <div class="pillar rv"><h3>Clear explanations</h3><p>You'll know what we're doing and why before any work starts.</p></div>
+      <div class="pillar rv"><h3>Fast turnaround</h3><p>Quick diagnosis and efficient repairs get you back on the road sooner.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="tag">Inside the shop</span><h2>Our garage</h2></div>
+      <p>Multiple service bays on Sheppard Ave East, just west of Kennedy Road.</p>
+    </div>
+    <div class="gallery rv" id="gal"></div>
+  </div>
+</section>
+
+<section id="reviews" style="background:var(--bg2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="tag">Real Google reviews</span><h2>What customers say</h2></div>
+      <div class="rev-nav"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
+    </div>
+    <div class="rev-track rv" id="track"></div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="sec-head rv"><div><span class="tag">Come see us</span><h2>Visit the shop</h2></div></div>
+    <div class="visit">
+      <div class="card rv">
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>3436 Sheppard Ave E</b><br><span style="color:var(--muted)">Scarborough, ON M1T 3K4</span></div></div>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><a href="tel:+14167515250"><b>(416) 751-5250</b></a></div>
+        <h3 style="font-size:28px;margin-top:24px">Hours</h3>
+        <table class="hours" id="hours"></table>
+        <p style="color:var(--muted);font-size:13px;margin-top:12px">Holiday hours may vary. Call ahead to confirm.</p>
+      </div>
+      <div class="map rv"><iframe loading="lazy" title="Map to Kanji Automotive" src="https://www.google.com/maps?q=Kanji+Automotive,+3436+Sheppard+Ave+E,+Scarborough,+ON+M1T+3K4&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Kanji Automotive · 3436 Sheppard Ave E, Scarborough</span>
+    <span><a href="tel:+14167515250">(416) 751-5250</a></span>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-y" href="tel:+14167515250">Call</a>
+  <a class="btn btn-o" style="background:var(--bg2)" href="https://www.google.com/maps/dir/?api=1&destination=Kanji+Automotive+3436+Sheppard+Ave+E+Scarborough+ON" target="_blank" rel="noopener">Directions</a>
+</div>
+
+<div class="lb" id="lb"><button aria-label="Close">×</button><img alt=""></div>
+
+<script>
+const P={
+  hero:"gps-cs-s/ANWiy9QPcqWc8UJDOFC1PUKqzjLw3go4J4JCOmBn3XP-5kBKpMvBsTZ8sinBerc09esmRxs-VRhFbNwY6D8zqyvRnj-jQ9_E3no5kAPzAoVyM-Dt4S4PqFyomYlNSwKFZKhMjc7VI2Ee",
+  bays:"gps-cs-s/ANWiy9Q0TQG6hwKCwM3o17x7loHkYWn2IQ4ZV8Ew5WKXbEt6v2mNeD2S6ocHJ1CEQcDod9VwSM5t61kGGoFXSQj66EbY0ozc6l2SM3UFa8kNQvF884dafLPOrJUSKh9UPjtBcOSviENx",
+  lift:"gps-cs-s/ANWiy9TH9FIDG1zR51Kp1bNMsOwYMCXEtmZMn08vB9mIMBJRrjCqj8lK63_7LZMqCI6RBUmoJxc9-ktratp6gx-u4wWPeWdqJtJogFqay6mx5e47zOlHmAKWuJcoKDlePMnXxO61aQYXLTUGTJpx",
+  repair:"gps-cs-s/ANWiy9QcJbYKck61LknZ2Nn2GojsevFljxsGsEgUyIv33LWrMB2lRqRdfVMzrEl6UKzTEcFyBLYj0bUuFrmTodylNPwyGj4lX_UKikiQrxvqpjS5j_Z2ltBk_l_NhKyZ4aipd2HCUzouKSdf1amW",
+  rotor:"gps-cs-s/ANWiy9SziGj4-_HNS4kUECXW3jKjKNFzifA-OdOBHIvVf0Z-Zu5-EZ-pZtIeoKVjg_L_TL1Upy2K81QsiyHJQaQ7_T8q3HY28Z0tRxdT0LdQlSGQxKNV1L3AKmI1IiJbI1Ea4zFCYS-JoTe_NuVL",
+  flyer:"gps-cs-s/ANWiy9QTyqSQOU_gL0urqHrmX7KrFhn8pDR566b9ysd5cqYrM2A0UQ7GAWNjHy7Yx3AEziJgdD9S3HWEOVXY5jIpv-YxjWBHjzGCxVG44rysqv6g-YJsJAGr5R-_dSYziEjjlrttz-KmtOIAWbU",
+  porsche:"gps-cs-s/ANWiy9QueUUgR2_9vi8Qre8ppJJ49Y0Rov7j_2sdg_xuwShlsTbxPj_klyjwA-xRvZuzsgzM3fCWAFaY5RKbxEJ5pApi5gFUpdB-1eOzqW0cFrAJc2KmPFxyAoAONHvgp39LSWBXiyaE2ebgNDeP",
+  garage:"gps-cs-s/ANWiy9RpNUL_zGXNNZb260PValZ-wEYgi786n4O8n6cW--1tquNxFq0MPa3foVMHC22t0o1uNm-IMNk_LupKa8A8v3bmU0lcwLtBp4N-9GWkqJh-wuysE9qwoH75jSxgfLkKVUPueVL0",
+  tires:"gps-cs-s/ANWiy9SPDAkUeQaYjGIKlP9G5Uxp0C3ePgKobzXE7xl-rjwnGyu_Sb1XhPbIZWcTbMJ2EQI1KwmRC4YnDq-fefZIdawWAqoyJ7M6hIdnzUSD2IBQcYTdPEt3KzgNsb3OLwNcUa8lWuqo-yBV72yf",
+  front:"gps-cs-s/ANWiy9STtJ30nQ4ZlKCkDgJIn3A2gxqBZtfdmTffiugekMruOH_Jljj-64xKIErEYWbjb0JV6VvGXHTzeSRZ5u5bD4Vs05f-YPbxTeDYr5tu_qCXKMBuKCdK_6Yfc8vi82vAWwuptqjR7aQTJ2U"
+};
+const img=(k,w=1400,h=1000)=>`https://lh3.googleusercontent.com/${P[k]}=w${w}-h${h}-k-no`;
+// 0=Sun ... 6=Sat ; minutes from midnight
+const HOURS=[[600,960],[480,1080],[480,1080],[480,1080],[480,1080],[480,1080],[480,1080]];
+const REVIEWS=[
+ ["John M.","Absolutely amazing experience from start to finish. Imran is professional, knowledgeable, honest, and clearly takes pride in their work. They diagnosed the issue quickly, explained everything clearly, and got the job done properly without trying to upsell me on things I didn’t need."],
+ ["Mudit A.","One of the best auto repair and service shops around! I’ve been coming here for the past 1.5 years, and now I get all my car services from here. They’re honest, professional, and always provide genuine advice and fair quotes."],
+ ["Gary M.","I trust Kanji - that’s saying something for a mechanic. I bring my car to them semi-annually, and more often than not, they find nothing. They charge me for the check up and send me on my way."],
+ ["Shanna","Great job fixing my vehicle. Second time here and both times I was well taken care of. They explained everything they were doing to my vehicle, and made sure I was comfortable. Imran was awesome and made my experience even better. Will be returning for sure."],
+ ["Ann S.","The team at Kanji Auto are the only people I trust with my cars in Toronto. They’re honest, knowledgeable, reliable, and always provide exceptional service. Something that is incredibly hard to find in the auto industry."],
+ ["Catherine M.","I had a massive scare while driving recently when my battery light suddenly flashed on, and shortly after, all of my electronics started shutting down. Luckily, I managed to pull right into Kanji Auto…"],
+ ["KDubb","I can’t speak highly enough of Kanji automotive. My engine blew and I was faced with the unenviable task of finding an engine for my baby. My long time mechanic tried along with two other shops and they weren’t able to find a clean engine (low kms) that matched the condition of my Accord…"]
+];
+const GAL=[["lift","w2 h2"],["bays",""],["rotor",""],["tires",""],["porsche",""],["repair","w2"],["garage",""],["front",""]];
+</script>
+<script>
+/* shared behaviour */
+document.getElementById('yr').textContent=new Date().getFullYear();
+const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+document.getElementById('burger').onclick=()=>document.getElementById('links').classList.toggle('open');
+document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>document.getElementById('links').classList.remove('open'));
+document.querySelectorAll('[data-img]').forEach(e=>e.style.backgroundImage=`url(${img(e.dataset.img,1800,1100)})`);
+document.querySelectorAll('[data-bg]').forEach(e=>e.style.backgroundImage=`url(${img(e.dataset.bg,1000,1200)})`);
+// gallery
+const gal=document.getElementById('gal'),lb=document.getElementById('lb');
+GAL.forEach(([k,c])=>{const b=document.createElement('button');b.className=c;b.innerHTML=`<img loading="lazy" src="${img(k,900,700)}" alt="Kanji Automotive shop photo">`;b.querySelector('img').onerror=function(){b.remove()};b.onclick=()=>{lb.querySelector('img').src=img(k,1800,1400);lb.classList.add('on')};gal.appendChild(b)});
+lb.onclick=()=>lb.classList.remove('on');addEventListener('keydown',e=>e.key==='Escape'&&lb.classList.remove('on'));
+// reviews
+const tr=document.getElementById('track');
+REVIEWS.forEach(([n,t])=>{tr.insertAdjacentHTML('beforeend',`<article class="rev"><div class="stars">★★★★★</div><p>“${t}”</p><div class="who"><span class="av">${n[0]}</span><div><b>${n}</b><br><small style="color:var(--muted)">Google review</small></div></div></article>`)});
+document.getElementById('next').onclick=()=>tr.scrollBy({left:tr.clientWidth*.8,behavior:'smooth'});
+document.getElementById('prev').onclick=()=>tr.scrollBy({left:-tr.clientWidth*.8,behavior:'smooth'});
+// hours + open status (Toronto time)
+const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const fmt=m=>{let h=Math.floor(m/60),mm=m%60,ap=h>=12?'p.m.':'a.m.';h=h%12||12;return h+(mm?':'+String(mm).padStart(2,'0'):'')+' '+ap};
+const now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/Toronto'}));const d=now.getDay(),mins=now.getHours()*60+now.getMinutes();
+const ht=document.getElementById('hours');
+[1,2,3,4,5,6,0].forEach(i=>{const h=HOURS[i];ht.insertAdjacentHTML('beforeend',`<tr class="${i===d?'today':''}"><td>${days[i]}</td><td>${h?fmt(h[0])+' – '+fmt(h[1]):'Closed'}</td></tr>`)});
+const st=document.getElementById('status'),h=HOURS[d],open=h&&mins>=h[0]&&mins<h[1];
+st.classList.add(open?'open':'closed');st.lastElementChild.textContent=open?`Open now · until ${fmt(h[1])}`:'Closed now';
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)});
+// counters
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,to=+el.dataset.count,dec=+(el.dataset.dec||0),t0=performance.now();const step=t=>{const p=Math.min((t-t0)/1400,1),v=to*(1-Math.pow(1-p,3));el.textContent=v.toFixed(dec);if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step);co.unobserve(el)}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(e=>co.observe(e));
+// hero parallax
+const hb=document.querySelector('.hero-bg');addEventListener('scroll',()=>{if(scrollY<innerHeight)hb.style.transform=`scale(1.08) translateY(${scrollY*.25}px)`},{passive:true});
+</script>
+</body>
+</html>
